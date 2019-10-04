@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Title</title>
+    <title>Guest List</title>
 </head>
 <body>
 <header>
     <h1>Guest List</h1>
-    <a href="add">Sign Up</a><br />
+    <a href="/add">Add Comment</a><br />
     <table>
         <tr>
             <th>Name</th>
@@ -26,7 +26,7 @@
             <td th:text="${guest.comment}"></td>
             <td>
                 <a th:href="@{/update/{id}(id=${guest.id})}">Update</a> -
-                <a th:href="@{/view/{id}(id=${guest.id})}">View</a> -
+                <a th:href="@{/detail/{id}(id=${guest.id})}">View</a> -
                 <a th:href="@{/delete/{id}(id=${guest.id})}">Delete</a> -
             </td>
         </tr>

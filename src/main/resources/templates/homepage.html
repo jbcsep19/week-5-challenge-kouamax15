@@ -1,5 +1,6 @@
+<!--THIS MY VIEW PAGE-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -7,6 +8,43 @@
     <title>Title</title>
 </head>
 <body>
+
+<!--NAVBAR BEGINS-->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h3>Inverted Navbar</h3>
+    <p>An inverted navbar is black instead of gray.</p>
+</div>
+
+<!--NAVBAR ENDS-->
+    <a href="/">Show All Comments</a><br/>
+
+    Name :<span th:text="${guest.name}"></span><br />
+    Date Posted :<span th:number="${guest.date}"></span><br />
+    Email Address :<span th:text="${guest.email}"></span><br />
+    Hometown :<span th:text="${guest.hometown}"></span><br />
+    Comment :<span th:text="${guest.comment}"></span><br />
+
+    <a th:href="@{/update/{id}(id=${guest.id})}">Update</a> -
+    <a th:href="@{/detail/{id}(id=${guest.id})}">View</a> -
+    <a th:href="@{/delete/{id}(id=${guest.id})}">Delete</a> -
+
+<!--for adding a new comment-->
+    <a href="/add">Add Comment</a><br />
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

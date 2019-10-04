@@ -1,24 +1,16 @@
 package com.example.demo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
-import org.springframework.stereotype.Controller;
-import org.springframework.data.repository.CrudRepository;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import org.springframework.web.bind.annotation.GetMapping;
 import javax.persistence.Id;
-import org.springframework.ui.Model;
-
-import javax.validation.constraints.Min;
+import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.NotNull;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import java.text.SimpleDateFormat;
 import javax.validation.constraints.Size;
 
 //Starting by Annotating and declaring my variables
 @Entity
-public class Guestbook {
+public class Guest {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -27,8 +19,7 @@ public class Guestbook {
     @Size(min=2)
     private String name;
 
-    @NotNull
-    @Size(min=2)
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
     private String date;
 
     @NotNull
