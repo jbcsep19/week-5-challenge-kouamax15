@@ -48,9 +48,9 @@ public class HomeController {
         return "homepage";
     }
     @RequestMapping("/update/{id}")
-    public String updateGuest(@PathVariable("id") long id, Model model){
-        model.addAttribute("guest", guestbookRepository.findById(id).get());
-        return "guestform";
+        public String updateGuest(@PathVariable("id") long id, Model model){
+            model.addAttribute("guest", guestbookRepository.findById(id).get());
+            return "guestform";
     }
     @RequestMapping("/delete/{id}")
     public String deleteGuest(@PathVariable("id") long id){
